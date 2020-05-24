@@ -4,12 +4,12 @@ function fish_prompt --description 'Informative prompt'
 
     set -l time_string (
         set_color $fish_color_prompt
-        date "+%H:%M:%S"
+        date '+%H:%M:%S'
     )
 
     set -l user_string (
         if contains $USER root toor
-            set_color brred
+            set_color $fish_color_cwd_root
         else
             set_color $fish_color_cwd
         end
