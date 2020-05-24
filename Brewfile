@@ -42,3 +42,19 @@ brew "jq"
 brew "watch"
 brew "yarn"
 brew "youtube-dl"
+
+
+# Xcode
+
+brew "mas"
+mas "xcode", id: 497799835
+
+
+# Apps for development
+
+cask "atom"
+cask "docker"
+cask "firefox"
+cask "google-chrome"
+cask "jetbrains-toolbox"
+cask "visual-studio-code"
