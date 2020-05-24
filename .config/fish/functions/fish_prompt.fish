@@ -20,12 +20,39 @@ function fish_prompt --description 'Informative prompt'
     )
 
     set -l git_string (
-        set -x __fish_git_prompt_show_informative_status
+        set -x __fish_git_prompt_showdirtystate
+        set -x __fish_git_prompt_showstashstate
+        set -x __fish_git_prompt_showuntrackedfiles
+        set -x __fish_git_prompt_showupstream informative
+        set -x __fish_git_prompt_describe_style branch
         set -x __fish_git_prompt_showcolorhints
+        set -x __fish_git_prompt_show_informative_status
+
+        set -x __fish_git_prompt_char_cleanstate ''
+        set -x __fish_git_prompt_char_dirtystate ' '
+        set -x __fish_git_prompt_char_invalidstate ' '
+        set -x __fish_git_prompt_char_stagedstate ' '
+        set -x __fish_git_prompt_char_stashstate ' '
+        set -x __fish_git_prompt_char_stateseparator ''
+        set -x __fish_git_prompt_char_untrackedfiles ' '
+        set -x __fish_git_prompt_char_upstream_ahead ' ↑'
+        set -x __fish_git_prompt_char_upstream_behind ' ↓'
+        set -x __fish_git_prompt_char_upstream_diverged ' '
+        set -x __fish_git_prompt_char_upstream_equal ' ='
+        set -x __fish_git_prompt_char_upstream_prefix ''
+
         set -x __fish_git_prompt_color $fish_color_prompt
         set -x __fish_git_prompt_color_branch $fish_color_cwd
-        set -x __fish_git_prompt_char_stateseparator ' '
-        fish_git_prompt '%s'
+        set -x __fish_git_prompt_color_dirtystate blue
+        set -x __fish_git_prompt_color_stagedstate green
+        set -x __fish_git_prompt_color_invalidstate brred
+        set -x __fish_git_prompt_color_stashstate yellow
+        set -x __fish_git_prompt_color_untrackedfiles red
+        
+        set -x __fish_git_prompt_shorten_branch_len 25
+        set -x __fish_git_prompt_shorten_branch_char_suffix '...'
+
+        fish_git_prompt 'branch %s'
     )
 
     set -l python_string
@@ -42,7 +69,7 @@ function fish_prompt --description 'Informative prompt'
             echo -n ')'
         )
         set python_string (
-            set -l python_version (python --version)
+            set -l python_version (python --version | string lower)
             and echo -n $python_version $virtualenv_string
         )
     end
