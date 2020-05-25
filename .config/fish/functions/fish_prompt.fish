@@ -48,7 +48,7 @@ function fish_prompt --description 'Informative prompt'
         set -x __fish_git_prompt_color_invalidstate brred
         set -x __fish_git_prompt_color_stashstate yellow
         set -x __fish_git_prompt_color_untrackedfiles red
-        
+
         set -x __fish_git_prompt_shorten_branch_len 25
         set -x __fish_git_prompt_shorten_branch_char_suffix '...'
 
@@ -69,7 +69,7 @@ function fish_prompt --description 'Informative prompt'
             echo -n ')'
         )
         set python_string (
-            set -l python_version (python --version | string lower)
+            set -l python_version (python --version &| string lower)
             and echo -n $python_version $virtualenv_string
         )
     end
@@ -92,7 +92,7 @@ function fish_prompt --description 'Informative prompt'
 
     set_color $fish_color_prompt
     string join $separator $time_string $user_string $git_string $python_string $cwd_string $pipestatus_string
-    
+
     set_color normal
     echo -n '> '
 end
