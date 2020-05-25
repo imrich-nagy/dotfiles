@@ -1,5 +1,8 @@
 # Fish shell script for setting default universal variables
 
+# Print commands when executing
+set -l fish_trace 1
+
 # Set default editor to VS Code
 set -Ux EDITOR '/usr/local/bin/code -w'
 
