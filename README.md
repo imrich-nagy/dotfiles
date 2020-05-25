@@ -20,8 +20,8 @@ Copy config files to the home directory:
 cp -Rv .config ~
 ```
 
-Run the setup script:
+Run the setup script inside `fish`:
 
 ```
-source setup.fish
+fish setup.fish
 ```
