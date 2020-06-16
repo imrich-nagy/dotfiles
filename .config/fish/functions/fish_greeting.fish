@@ -1,7 +1,4 @@
 function fish_greeting
-    echo
-    set_color $fish_color_prompt
-    echo 'Hi, welcome back.'
     set -l suffix
     switch (date '+%-d')
         case 1 21 31
@@ -13,10 +10,7 @@ function fish_greeting
         case '*'
             set suffix 'th'
     end
-    echo -n 'Today is '
-    set_color normal
-    echo -n (date "+%A, %-d$suffix of %B")
+    echo -ns \n (date "+%A, %-d$suffix of %B")
     set_color $fish_color_prompt
-    echo .
-    echo
+    echo ' · fish shell'
 end
