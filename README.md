@@ -17,7 +17,7 @@ brew bundle install
 Copy config files to the home directory:
 
 ```
-cp -Rv .config ~
+cp -Rv .config .gitconfig ~
 ```
 
 Run the setup script inside `fish`:
