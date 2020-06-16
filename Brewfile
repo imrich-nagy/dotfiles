@@ -24,7 +24,7 @@ brew "xz"
 brew "zlib"
 
 # Useful command line tools
-brew "gettext"
+brew "bat"
 brew "diff-so-fancy"
 brew "ffmpeg"
 brew "httpie"
@@ -39,6 +39,8 @@ brew "mas"
 mas "xcode", id: 497799835
 
 # Apps for development
+cask "1password"
+cask "1password-cli"
 cask "atom"
 cask "docker"
 cask "firefox"
