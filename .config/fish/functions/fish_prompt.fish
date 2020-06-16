@@ -76,7 +76,7 @@ function fish_prompt --description 'Informative prompt'
 
     set -l cwd_string (
         set_color $fish_color_cwd
-        prompt_pwd
+        echo -s (prompt_pwd) /
     )
 
     set -l pipestatus_string (
