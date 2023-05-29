@@ -1,25 +1,22 @@
-# dotfiles
+# imrich-nagy/dotfiles
 
-Files for setting up my development environment
-
-- Contains a [Brewfile](./home/Brewfile) for installing dev tools on macOS using `brew`
-- Includes a [setup script](./setup.fish) and [config dir](./home/.config/fish) for customizing `fish`
+My dotfiles for fish shell on macOS 🐟
 
 ## Usage
 
-Install system dependencies with `brew bundle`:
+Install software with `brew bundle`:
 
 ```
-brew bundle install
+brew bundle install --file=./home/Brewfile
 ```
 
 Copy config files to the home directory:
 
 ```
-cp -Rv ./home ~
+rsync -rv --exclude=.DS_Store ./home/ ~
 ```
 
-Run the setup script inside `fish`:
+Run the setup script for `fish`:
 
 ```
 fish setup.fish
