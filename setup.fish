@@ -9,17 +9,15 @@ set -Ux EDITOR '/usr/local/bin/code -w'
 # Configure less
 set -Ux LESS '-RSM'
 
-# Set pyenv and virtualenv dirs
-set -Ux PYENV_ROOT "$HOME/.pyenv"
-set -Ux VIRTUALFISH_HOME "$HOME/.virtualenvs"
-
-# Configure shell prompt
+# Configure prompt
 set -U fish_color_cwd normal
 set -U fish_color_cwd_root brred
 set -U fish_color_prompt brblack
 set -U fish_prompt_pwd_dir_length 20
 
-# Include pyenv dir in search paths
-if not contains "$HOME/.pyenv/sbin" $fish_user_paths
-    set -U fish_user_paths "$HOME/.pyenv/bin"
-end
+# Set up pyenv
+set -Ux PYENV_ROOT $HOME/.pyenv
+fish_add_path $PYENV_ROOT/bin
+
+# Set up virtualfish
+set -Ux VIRTUALFISH_HOME "$HOME/.virtualenvs"
