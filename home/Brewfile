@@ -5,14 +5,13 @@ tap "homebrew/services"
 # Fish shell
 brew "fish"
 
-# JS development
+# JavaScript
 brew "node"
 brew "pnpm"
 brew "yarn"
 
-# Python development
+# Python
 brew "python"
-brew "python@3.8"
 brew "pyenv"
 brew "pipenv"
 
@@ -23,40 +22,55 @@ brew "sqlite"
 brew "xz"
 brew "zlib"
 
+# Postgres
+brew "postgresql"
+
 # Useful CLI tools
 brew "bat"
 brew "bat-extras"
 brew "diff-so-fancy"
 brew "fd"
 brew "ffmpeg"
+brew "fx"
 brew "httpie"
 brew "jq"
 brew "p7zip"
 brew "svgo"
 brew "watch"
-brew "yarn"
 brew "yt-dlp"
 brew "yq"
 
 # Updated built-in tools
+brew "curl"
 brew "git"
 brew "less"
+brew "rsync"
 
 # Latest GNU software
 brew "bash"
 brew "coreutils"
 brew "diffutils"
+brew "ed"
 brew "findutils"
+brew "gnu-indent"
+brew "gnu-sed"
+brew "gnu-tar"
+brew "gnu-time"
+brew "gnu-which"
 brew "grep"
 brew "gzip"
 brew "make"
+brew "nano"
+brew "parallel"
 brew "screen"
+brew "wdiff"
 brew "wget"
 
 # GUI apps
 cask "1password"
 cask "1password-cli"
 cask "adobe-creative-cloud"
+cask "brave-browser"
 cask "chromium"
 cask "discord"
 cask "docker"
