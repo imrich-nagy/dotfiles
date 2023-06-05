@@ -6,6 +6,9 @@ set -l fish_trace 1
 # Set default editor to VS Code
 set -Ux EDITOR '/usr/local/bin/code -w'
 
+# Use bat as man pager
+set -Ux MANPAGER "sh -c 'col -bx | bat -l man -p'"
+
 # Configure less
 set -Ux LESS '-RSM'
 
