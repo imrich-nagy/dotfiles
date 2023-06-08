@@ -40,6 +40,12 @@ brew "watch"
 brew "yt-dlp"
 brew "yq"
 
+# Formatters
+brew "black"
+brew "clang-format"
+brew "prettier"
+brew "shfmt"
+
 # Updated built-in tools
 brew "curl"
 brew "git"
